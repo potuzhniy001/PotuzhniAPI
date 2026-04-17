@@ -10,7 +10,6 @@ import java.util.function.Consumer;
 
 public class ConfigMenu extends Menu {
 
-
     @Override
     public void click(Player player, int slot) {
 
