@@ -4,34 +4,30 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
 
-public interface Menu extends InventoryHolder {
+public abstract class Menu implements InventoryHolder {
 
-    void click(Player player, int slot);
+    final Map<Integer, ItemStack> items = new HashMap<>();
+    protected final Map<Integer, Consumer<Player>> actions = new HashMap<>();
 
-    void setItem(int slot, ItemStack item);
+    public abstract void click(Player player, int slot);
 
-    void setItem(int slot, ItemStack item, Consumer<Player> action);
+    public abstract void setItem(int slot, ItemStack item);
 
-    void onSetItems();
+    public abstract void setItem(int slot, ItemStack item, Consumer<Player> action);
 
-    boolean usePlaceholders();
+    public abstract void onSetItems();
 
-    void setPlaceholders();
+    public abstract void setPlaceholders(Player player);
 
-    void update();
+    public abstract void update();
 
-    Map<Integer, ItemStack> getItemsMap();
-    Map<Integer, Consumer<Player>> getActionsMap();
+    public abstract Map<Integer, ItemStack> getItemsMap();
+    public abstract  Map<Integer, Consumer<Player>> getActionsMap();
 
-    default void open(Player player) {
-        if (usePlaceholders())
-            setPlaceholders();
-
-        onSetItems();
-        player.openInventory(getInventory());
-    }
+    public abstract void open(Player player);
 
 }

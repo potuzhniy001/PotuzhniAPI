@@ -6,11 +6,11 @@ public final class PotuzhniAPI extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        getLogger().info("API Enabled!");
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        getLogger().info("API Disabled!");
     }
 }
