@@ -8,13 +8,13 @@ import org.jetbrains.annotations.NotNull;
 
 import static io.github.potuzhniAPI.utils.PotuzhniUtils.parse;
 
-public class ExampleMenu extends Menu {
+public class TestMenu extends Menu {
 
     private final PotuzhniAPI plugin;
     private final MenuLoader menuLoader;
     private final ConfigurationSection config;
 
-    public ExampleMenu(PotuzhniAPI plugin, ConfigurationSection config) {
+    public TestMenu(PotuzhniAPI plugin, ConfigurationSection config) {
         super(plugin);
         this.plugin = plugin;
         this.menuLoader = plugin.getMenuLoader();

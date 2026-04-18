@@ -76,6 +76,7 @@ public class MenuLoader {
                 Sound sound = Sound.valueOf(soundName.toUpperCase());
                 player.playSound(player.getLocation(), sound, 1.0f, 1.0f);
             } catch (IllegalArgumentException e) {
+                sendMessage(player, "<red>ERROR: Unknown sound. Check console for more information.");
                 plugin.getLogger().severe("Unknown sound: " + soundName);
             }
 

@@ -1,7 +1,7 @@
 package io.github.potuzhniAPI.commands;
 
 import io.github.potuzhniAPI.PotuzhniAPI;
-import io.github.potuzhniAPI.menu.ExampleMenu;
+import io.github.potuzhniAPI.menu.TestMenu;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -23,7 +23,7 @@ public class TestCommand implements CommandExecutor {
         Player player = (Player) sender;
 
         ConfigurationSection config = plugin.getConfig().getConfigurationSection("example-menu");
-        ExampleMenu exampleMenu = new ExampleMenu(plugin, config);
+        TestMenu exampleMenu = new TestMenu(plugin, config);
         exampleMenu.open(player);
 
         return true;
