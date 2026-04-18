@@ -20,3 +20,48 @@ example-menu:
       actions:
         - "[sound] VILLAGER_NO"
         - "[close-menu]"
+
+paginated-menu:
+  title: "<gradient:gold:red>Paginated menu"
+  size: 27
+  items:
+    test:
+      material: DIAMOND_BLOCK
+      display-name: "<aqua>TEST item!!"
+      lore:
+        - "<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_PLAYER_LEVELUP"
+        - "[close-menu]"
+    wood:
+      material: OAK_LOG
+      display-name: "<aqua>MAYBE LOG MAYBE WOOD"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] VILLAGER_NO"
+        - "[close-menu]"
+    woo2d:
+      material: OAK_LOG
+      display-name: "<aqua>MAYBE LOG MAYBE WOOD"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] VILLAGER_NO"
+        - "[close-menu]"
+    wo33od:
+      material: OAK_LOG
+      display-name: "<aqua>MAYBE LOG MAYBE WOOD"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] VILLAGER_NO"
+        - "[close-menu]"
+    wo44od:
+      material: OAK_LOG
+      display-name: "<aqua>MAYBE LOG MAYBE WOOD"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"

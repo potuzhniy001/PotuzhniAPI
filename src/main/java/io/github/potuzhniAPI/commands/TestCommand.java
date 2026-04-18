@@ -1,7 +1,9 @@
 package io.github.potuzhniAPI.commands;
 
 import io.github.potuzhniAPI.PotuzhniAPI;
+import io.github.potuzhniAPI.menu.PaginatedMenu;
 import io.github.potuzhniAPI.menu.TestMenu;
+import io.github.potuzhniAPI.menu.TestPaginatedMenu;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -22,9 +24,9 @@ public class TestCommand implements CommandExecutor {
 
         Player player = (Player) sender;
 
-        ConfigurationSection config = plugin.getConfig().getConfigurationSection("example-menu");
-        TestMenu exampleMenu = new TestMenu(plugin, config);
-        exampleMenu.open(player);
+        ConfigurationSection config = plugin.getConfig().getConfigurationSection("paginated-menu");
+        TestPaginatedMenu paginatedMenu = new TestPaginatedMenu(plugin, config);
+        paginatedMenu.open(player);
 
         return true;
     }

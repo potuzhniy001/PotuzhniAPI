@@ -9,6 +9,7 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -21,11 +22,13 @@ public class MenuLoader {
 
     private final PotuzhniAPI plugin;
 
-    public MenuLoader(PotuzhniAPI plugin) {
-        this.plugin = plugin;
-    }
+    public MenuLoader(PotuzhniAPI plugin) { this.plugin = plugin; }
 
-    public ItemStack parseItem(ConfigurationSection section) {
+
+    /*
+    Parsing item from YAML configuration
+     */
+    public ItemStack parseItem(@NotNull ConfigurationSection section) {
         String type = section.getString("material", "STONE");
         ItemStack item = new ItemStack(Material.valueOf(type.toUpperCase()));
         ItemMeta meta = item.getItemMeta();
@@ -48,6 +51,10 @@ public class MenuLoader {
         return item;
     }
 
+
+    /*
+    Parsing actions from YAML configuration
+     */
     public Consumer<Player> parseAction(ConfigurationSection section) {
         if (section.contains("actions")) {
             List<String> actionList = section.getStringList("actions");
@@ -63,6 +70,10 @@ public class MenuLoader {
         return null;
     }
 
+
+    /*
+    Handle actions
+     */
     private void executeSingleAction(String action, Player player) {
         if (action.startsWith("[player] ")) {
             player.performCommand(action.substring("[player] ".length()));
@@ -90,6 +101,10 @@ public class MenuLoader {
         }
     }
 
+
+    /*
+    Set items in menu
+     */
     public void setItems(Menu menu, int slot, ConfigurationSection section) {
         ItemStack item = parseItem(section);
         Consumer<Player> action = parseAction(section);
