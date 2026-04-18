@@ -1,11 +1,16 @@
 name: PotuzhniAPI
 description: $description
-version: '$version'
+version: '1.0'
 
 main: io.github.potuzhniAPI.PotuzhniAPI
-api-version: '1.20.6'
+api-version: '1.20'
 load: POSTWORLD
 
 authors: [ potuzhni ]
 
 softdepend: [ PlaceholderAPI ]
+
+commands:
+  testcommand:
+    description: test commmand
+    permission: test.command

@@ -1,0 +1,22 @@
+example-menu:
+  title: "<gradient:red:gold>Example menu"
+  size: 27
+  items:
+    test:
+      slot: 12
+      material: DIAMOND_BOOTS
+      display-name: "<aqua>TEST item!!"
+      lore:
+        - "<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_PLAYER_LEVELUP"
+        - "[close-menu]"
+    wood:
+      slot: 15
+      material: OAK_LOG
+      display-name: "<aqua>MAYBE LOG MAYBE WOOD"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] VILLAGER_NO"
+        - "[close-menu]"
