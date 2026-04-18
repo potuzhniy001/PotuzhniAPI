@@ -22,8 +22,8 @@ public class TestCommand implements CommandExecutor {
 
         Player player = (Player) sender;
 
-        ConfigurationSection section = plugin.getConfig().getConfigurationSection("example-menu");
-        ExampleMenu exampleMenu = new ExampleMenu(plugin, section);
+        ConfigurationSection config = plugin.getConfig().getConfigurationSection("example-menu");
+        ExampleMenu exampleMenu = new ExampleMenu(plugin, config);
         exampleMenu.open(player);
 
         return true;

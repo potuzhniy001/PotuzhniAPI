@@ -28,9 +28,9 @@ public class ExampleMenu extends Menu {
 
         for (String key : itemsSection.getKeys(false)) {
             ConfigurationSection itemSection = itemsSection.getConfigurationSection(key);
-            if (itemsSection == null) continue;
+            if (itemSection == null) continue;
 
-            int slot = itemsSection.getInt("slot");
+            int slot = itemSection.getInt("slot");
             menuLoader.setItems(this, slot, itemSection);
         }
     }
