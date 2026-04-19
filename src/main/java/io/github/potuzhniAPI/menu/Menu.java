@@ -20,8 +20,8 @@ public abstract class Menu implements InventoryHolder {
     protected Menu(PotuzhniAPI plugin) { this.plugin = plugin; }
 
 
-    /*
-    Handle click
+    /**
+     * Handle click
      */
     public void click(Player player, int slot) {
         Consumer<Player> action = actions.get(slot);
@@ -31,8 +31,8 @@ public abstract class Menu implements InventoryHolder {
     }
 
 
-    /*
-    Set items in HashMap
+    /**
+     * Set items in HashMap
      */
     public void setItem(int slot, ItemStack item) {
         items.put(slot, item);
@@ -40,8 +40,8 @@ public abstract class Menu implements InventoryHolder {
     }
 
 
-    /*
-    Set items in HashMap with actions
+    /**
+     * Set items in HashMap with actions
      */
     public void setItem(int slot, ItemStack item, Consumer<Player> action) {
         items.put(slot, item);
@@ -51,14 +51,14 @@ public abstract class Menu implements InventoryHolder {
     }
 
 
-    /*
-    Abstract | On set items
+    /**
+     * On set items
      */
-    public abstract void onSetItems();
+    public void onSetItems() {}
 
 
-    /*
-    Handle open menu
+    /**
+     * Handle open menu
      */
     public void open(Player player) {
         if (!player.isOnline()) return;
@@ -68,13 +68,15 @@ public abstract class Menu implements InventoryHolder {
     }
 
 
-    /*
-    Update menu
+    /**
+     * Update menu
      */
-    public void update() {}
+    public abstract void update();
 
 
-    /// Getters
+    /**
+     * Getters
+     */
     public Map<Integer, ItemStack> getItemsMap() { return Collections.unmodifiableMap(items); }
     public Map<Integer, Consumer<Player>> getActionsMap() { return Collections.unmodifiableMap(actions); }
 

@@ -1,29 +1,16 @@
-example-menu:
-  title: "<gradient:red:gold>Example menu"
-  size: 27
-  items:
-    test:
-      slot: 12
-      material: DIAMOND_BOOTS
-      display-name: "<aqua>TEST item!!"
-      lore:
-        - "<gray>that's will be good"
-      actions:
-        - "[sound] ENTITY_PLAYER_LEVELUP"
-        - "[close-menu]"
-    wood:
-      slot: 15
-      material: OAK_LOG
-      display-name: "<aqua>MAYBE LOG MAYBE WOOD"
-      lore:
-        - "<red>!<gray>that's will be good"
-      actions:
-        - "[sound] VILLAGER_NO"
-        - "[close-menu]"
-
 paginated-menu:
-  title: "<gradient:gold:red>Paginated menu"
+  title: "<gradient:gold:red>Paginated menu (Стор. %page%)"
   size: 54
+  content-slots: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44]
+  navigation:
+    back:
+      slot: 48
+      material: ARROW
+      display-name: "<yellow>Попередня сторінка"
+    next:
+      slot: 50
+      material: ARROW
+      display-name: "<yellow>Наступна сторінка"
   items:
     test:
       material: DIAMOND_BLOCK

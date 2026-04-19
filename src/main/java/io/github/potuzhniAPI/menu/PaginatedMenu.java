@@ -1,100 +1,75 @@
 package io.github.potuzhniAPI.menu;
 
 import io.github.potuzhniAPI.PotuzhniAPI;
-import org.bukkit.Material;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.Map;
-import java.util.function.Consumer;
-
-import static io.github.potuzhniAPI.utils.PotuzhniUtils.parse;
+import java.util.List;
 
 public abstract class PaginatedMenu<T> extends Menu {
 
-    private int currentPage = 0;
-    private int maxPage = 0;
+    protected Player player;
+    protected List<T> allItems;
+    protected int currentPage = 0;
+    public MenuConfig config;
+    private Inventory inventory;
 
-    protected PaginatedMenu(PotuzhniAPI plugin) { super(plugin); }
-
-
-    protected void setNavigation() {
-        actions.put(getInventory().getSize() - 1, player -> {
-            currentPage = Math.min(maxPage, currentPage + 1);
-            update();
-        });
-        actions.put(getInventory().getSize() - 9, player -> {
-            currentPage = Math.max(0, currentPage - 1);
-            update();
-        });
+    public PaginatedMenu(PotuzhniAPI plugin, Player player, List<T> allItems, MenuConfig config) {
+        super(plugin);
+        this.player = player;
+        this.allItems = allItems;
+        this.config = config;
     }
 
-
-    public void addAll(Map<ItemStack, Consumer<Player>> entries) {
-        final int safeArea = getInventory().getSize() - 9;
-
-        int index = 0;
-        for (Map.Entry<ItemStack, Consumer<Player>> entry : entries.entrySet()) {
-            int page = index / safeArea;
-            int slot = index % safeArea;
-
-            ItemStack item = entry.getKey();
-            Consumer<Player> action = entry.getValue();
-
-            setItem(page, slot, item, action);
-
-            index++;
-        }
+    @Override
+    public void open(Player player) {
+        String formattedTitle = config.title.replace("<page>", String.valueOf(currentPage + 1));
+        this.inventory = Bukkit.createInventory(this, config.rows * 9, formattedTitle);
+        update();
+        player.openInventory(inventory);
     }
-
 
     @Override
     public void update() {
-        getInventory().clear();
+       inventory.clear();
 
-        for (int i = 0; i < getInventory().getSize(); i++) {
-            final int index = currentPage * getInventory().getSize() + i;
-            final ItemStack item = this.getItemsMap().get(index);
+       int itemsPerPage = config.contentSlots.size();
+       int start = currentPage * itemsPerPage;
+       int end = Math.min(start + itemsPerPage, allItems.size());
 
-            if (item != null)
-                getInventory().setItem(i, item);
+        for (int i = start; i < end; i++) {
+            int slot = config.contentSlots.get(i - start);
+            inventory.setItem(slot, parseToItemStack(allItems.get(i)));
         }
 
-        setNavigation();
+        if (currentPage > 0) {
+            inventory.setItem(config.backSlot, config.backButton);
+        }
+
+        if (end < allItems.size()) {
+            inventory.setItem(config.nextSlot, config.nextButton);
+        }
     }
 
-    public void setItem(int page, int slot, ItemStack item) {
-        setItem(page, slot, item, player -> {});
+    protected abstract ItemStack parseToItemStack(T item);
+
+    public void nextPage() {
+        if ((currentPage + 1) * config.contentSlots.size() < allItems.size()) {
+            currentPage++;
+            open(player);
+        }
     }
 
-    public void setItem(int page, int slot, ItemStack item, Consumer<Player> action) {
-        final int index = page * getInventory().getSize() + slot;
-        actions.put(index, action);
-        items.put(index, item);
-
-        if (page == 0)
-            getInventory().setItem(index, item);
-
-        if (page > maxPage)
-            maxPage = page;
+    public void previousPage() {
+        if (currentPage > 0) {
+            currentPage--;
+            open(player);
+        }
     }
 
-    public ItemStack getItemPreviousPage() {
-        final ItemStack item = new ItemStack(Material.STONE_BUTTON);
-        final ItemMeta meta = item.getItemMeta();
-        meta.displayName(parse("Previous page"));
-        item.setItemMeta(meta);
-
-        return item;
-    }
-
-    public ItemStack getItemNextPage() {
-        final ItemStack item = new ItemStack(Material.STONE_BUTTON);
-        final ItemMeta meta = item.getItemMeta();
-        meta.displayName(parse("Next page"));
-        item.setItemMeta(meta);
-
-        return item;
-    }
+    @Override
+    public @NotNull Inventory getInventory() { return inventory; }
 }

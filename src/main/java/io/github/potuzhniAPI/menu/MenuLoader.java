@@ -25,8 +25,8 @@ public class MenuLoader {
     public MenuLoader(PotuzhniAPI plugin) { this.plugin = plugin; }
 
 
-    /*
-    Parsing item from YAML configuration
+    /**
+     * Parsing item from YAML configuration
      */
     public ItemStack parseItem(@NotNull ConfigurationSection section) {
         String type = section.getString("material", "STONE");
@@ -52,8 +52,8 @@ public class MenuLoader {
     }
 
 
-    /*
-    Parsing actions from YAML configuration
+    /**
+     * Parsing actions from YAML configuration
      */
     public Consumer<Player> parseAction(ConfigurationSection section) {
         if (section.contains("actions")) {
@@ -71,8 +71,8 @@ public class MenuLoader {
     }
 
 
-    /*
-    Handle actions
+    /**
+     * Handle actions
      */
     private void executeSingleAction(String action, Player player) {
         if (action.startsWith("[player] ")) {
@@ -102,8 +102,8 @@ public class MenuLoader {
     }
 
 
-    /*
-    Set items in menu
+    /**
+     * Set items in menu
      */
     public void setItems(Menu menu, int slot, ConfigurationSection section) {
         ItemStack item = parseItem(section);

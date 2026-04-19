@@ -9,22 +9,22 @@ import org.jetbrains.annotations.NotNull;
 public class PotuzhniUtils {
 
 
-    /*
-    Parsing String to Component (MiniMessage)
+    /**
+     * Parsing String to Component (MiniMessage)
      */
     public static @NotNull Component parse(String message) {
         return MiniMessage.miniMessage().deserialize("<!i><white>" + message);
     }
 
 
-    /*
-    Send parsed message to player
+    /**
+     * Send parsed message to player
      */
     public static void sendMessage(Player player, String message) { player.sendMessage(parse(message)); }
 
 
-    /*
-    Send parsed message to console sender
+    /**
+     * Send parsed message to console sender
      */
     public static void sendMessage(CommandSender sender, String message) { sender.sendMessage(parse(message)); }
 
