@@ -23,7 +23,7 @@ example-menu:
 
 paginated-menu:
   title: "<gradient:gold:red>Paginated menu"
-  size: 27
+  size: 54
   items:
     test:
       material: DIAMOND_BLOCK
@@ -60,6 +60,414 @@ paginated-menu:
     wo44od:
       material: OAK_LOG
       display-name: "<aqua>MAYBE LOG MAYBE WOOD"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    wo445od:
+      material: OAK_LOG
+      display-name: "<aqua>ttftMAYBE LOG MAYBE WOOD"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    iron_ingot_item:
+      material: IRON_INGOT
+      display-name: "<white>Refining Iron"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    gold_apple_item:
+      material: GOLDEN_APPLE
+      display-name: "<gold>Forbidden Fruit"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    deep_coal:
+      material: DEEPSLATE_COAL_ORE
+      display-name: "<dark_gray>Deep Carbon"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    fire_stick:
+      material: BLAZE_ROD
+      display-name: "<yellow>Blazing Wand"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    teleport_ball:
+      material: ENDER_PEARL
+      display-name: "<dark_purple>Teleport Core"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    slime_item:
+      material: SLIME_BALL
+      display-name: "<green>Sticky Essence"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    dark_shield:
+      material: OBSIDIAN
+      display-name: "<purple>Dark Shield"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    crystal_shard:
+      material: AMETHYST_SHARD
+      display-name: "<light_purple>Crystal Echo"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    immortal_totem:
+      material: TOTEM_OF_UNDYING
+      display-name: "<yellow>Life Saver"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    sweet_nectar:
+      material: HONEY_BOTTLE
+      display-name: "<gold>Sweet Nectar"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    deep_ear:
+      material: SCULK_SENSOR
+      display-name: "<dark_aqua>Deep Listener"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    echo_fragment:
+      material: ECHO_SHARD
+      display-name: "<dark_blue>Ancient Echo"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    heavy_metal:
+      material: NETHERITE_INGOT
+      display-name: "<dark_gray>Heavy Metal"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    lava_cream:
+      material: MAGMA_CREAM
+      display-name: "<red>Burning Cream"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    sea_shard:
+      material: PRISMARINE_SHARD
+      display-name: "<aqua>Ocean Fragment"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    ghost_tear:
+      material: GHAST_TEAR
+      display-name: "<white>Ghostly Tear"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    ancient_copper:
+      material: COPPER_BLOCK
+      display-name: "<gold>Old Metal"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    ocean_shell:
+      material: NAUTILUS_SHELL
+      display-name: "<gray>Rare Shell"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    glow_arrow:
+      material: SPECTRAL_ARROW
+      display-name: "<yellow>Glowing Strike"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    dragon_fire:
+      material: DRAGON_BREATH
+      display-name: "<magenta>Final Spark"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    ancient_debris_item:
+      material: ANCIENT_DEBRIS
+      display-name: "<dark_red>Ancient Scrap"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    crying_obsidian_item:
+      material: CRYING_OBSIDIAN
+      display-name: "<purple>Sorrow Stone"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    blue_ice_item:
+      material: BLUE_ICE
+      display-name: "<blue>Eternal Frost"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    sea_lantern_item:
+      material: SEA_LANTERN
+      display-name: "<aqua>Ocean Light"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    shulker_shell_item:
+      material: SHULKER_SHELL
+      display-name: "<magenta>Void Box"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    nether_star_item:
+      material: NETHER_STAR
+      display-name: "<white>Wither Essence"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    rabbit_foot_item:
+      material: RABBIT_FOOT
+      display-name: "<gold>Lucky Charm"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    chorus_fruit_item:
+      material: CHORUS_FRUIT
+      display-name: "<light_purple>Shift Fruit"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    heart_sea_item:
+      material: HEART_OF_THE_SEA
+      display-name: "<blue>Abyssal Core"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    phantom_membrane_item:
+      material: PHANTOM_MEMBRANE
+      display-name: "<gray>Night Skin"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    glow_ink_item:
+      material: GLOW_INK_SAC
+      display-name: "<aqua>Neon Liquid"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    spore_blossom_item:
+      material: SPORE_BLOSSOM
+      display-name: "<green>Jungle Flower"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    respawn_anchor_item:
+      material: RESPAWN_ANCHOR
+      display-name: "<dark_purple>Hell Point"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    turtle_egg_item:
+      material: TURTLE_EGG
+      display-name: "<green>Beach Secret"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    honeycomb_item:
+      material: HONEYCOMB
+      display-name: "<gold>Sticky Wax"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    lodestone_item:
+      material: LODESTONE
+      display-name: "<gray>Magnetic Block"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    conduit_item:
+      material: CONDUIT
+      display-name: "<aqua>Sea Eye"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    warped_fungus_item:
+      material: WARPED_FUNGUS
+      display-name: "<cyan>Blue Shroom"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    crimson_nylium_item:
+      material: CRIMSON_NYLIUM
+      display-name: "<red>Blood Soil"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    basalt_item:
+      material: POLISHED_BASALT
+      display-name: "<dark_gray>Volcanic Pillar"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    tnt_item:
+      material: TNT
+      display-name: "<red>Boom Box"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    dragon_egg_item:
+      material: DRAGON_EGG
+      display-name: "<dark_purple>The Ultimate Prize"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    ender_eye_item:
+      material: ENDER_EYE
+      display-name: "<dark_green>Portal Key"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    enchanted_book_item:
+      material: ENCHANTED_BOOK
+      display-name: "<gold>Ancient Knowledge"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    experience_bottle_item:
+      material: EXPERIENCE_BOTTLE
+      display-name: "<yellow>Liquid Wisdom"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    brewing_stand_item:
+      material: BREWING_STAND
+      display-name: "<gray>Alchemist Table"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    scaffolding_item:
+      material: SCAFFOLDING
+      display-name: "<gold>Builder's Help"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    bell_item:
+      material: BELL
+      display-name: "<yellow>Village Alarm"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    lantern_item:
+      material: LANTERN
+      display-name: "<gold>Warm Light"
+      lore:
+        - "<red>!<gray>that's will be good"
+      actions:
+        - "[sound] ENTITY_VILLAGER_NO"
+        - "[close-menu]"
+    spyglass_item:
+      material: SPYGLASS
+      display-name: "<white>Far Seeker"
       lore:
         - "<red>!<gray>that's will be good"
       actions:

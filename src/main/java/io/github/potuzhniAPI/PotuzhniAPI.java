@@ -1,7 +1,5 @@
 package io.github.potuzhniAPI;
 
-import io.github.potuzhniAPI.commands.TestCommand;
-import io.github.potuzhniAPI.listeners.TestListener;
 import io.github.potuzhniAPI.menu.MenuLoader;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -14,10 +12,6 @@ public final class PotuzhniAPI extends JavaPlugin {
         saveDefaultConfig();
 
         menuLoader = new MenuLoader(this);
-
-        getCommand("testcommand").setExecutor(new TestCommand(this));
-
-        getServer().getPluginManager().registerEvents(new TestListener(), this);
     }
 
     @Override
@@ -25,7 +19,5 @@ public final class PotuzhniAPI extends JavaPlugin {
         //
     }
 
-    public MenuLoader getMenuLoader() {
-        return menuLoader;
-    }
+    public MenuLoader getMenuLoader() { return menuLoader; }
 }

@@ -1,13 +1,11 @@
 package io.github.potuzhniAPI.menu;
 
 import io.github.potuzhniAPI.PotuzhniAPI;
-import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
@@ -22,11 +20,11 @@ public abstract class PaginatedMenu<T> extends Menu {
 
 
     protected void setNavigation() {
-        setItem(getInventory().getSize() - 1, getItemNextPage(), player -> {
+        actions.put(getInventory().getSize() - 1, player -> {
             currentPage = Math.min(maxPage, currentPage + 1);
             update();
         });
-        setItem(getInventory().getSize() - 9, getItemPreviousPage(), player -> {
+        actions.put(getInventory().getSize() - 9, player -> {
             currentPage = Math.max(0, currentPage - 1);
             update();
         });
