@@ -37,6 +37,7 @@ public class ConfigManager {
      */
     public void reloadConfig() {
         config = YamlConfiguration.loadConfiguration(configFile);
+        plugin.getComponentLogger().info("<green>Config {} reloaded!", configFile.getName());
     }
 
     /**
@@ -47,10 +48,9 @@ public class ConfigManager {
             config.save(configFile);
         } catch (IOException e) {
             plugin.getComponentLogger().error("<red>The configuration file could not be saved: {}", configFile.getName());
-            plugin.getComponentLogger().error(e.getMessage());
+            e.printStackTrace();
         }
     }
 
     public FileConfiguration getConfig() { return config; }
-
 }
