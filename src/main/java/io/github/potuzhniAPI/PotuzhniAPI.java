@@ -5,12 +5,15 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class PotuzhniAPI extends JavaPlugin {
 
+    private ConfigManager messagesConfig;
+
     @Override
     public void onEnable() {
         saveDefaultConfig();
 
-        ConfigManager configManager = new ConfigManager(this);
-        configManager.setupConfig("messages");
+        messagesConfig = new ConfigManager(this);
+        messagesConfig.setupConfig("messages");
+        messagesConfig.reloadConfig();
     }
 
     @Override
@@ -18,4 +21,5 @@ public final class PotuzhniAPI extends JavaPlugin {
         //
     }
 
+    public ConfigManager getMessagesConfig() { return messagesConfig; }
 }

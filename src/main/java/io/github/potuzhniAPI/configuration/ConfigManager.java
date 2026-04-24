@@ -4,8 +4,8 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class ConfigManager {
     private final JavaPlugin plugin;
@@ -17,8 +17,14 @@ public class ConfigManager {
     }
 
     /**
-     * Setup configuration file. You can use setupConfig("custom") without .yml end,
-     * also can use setupConfig("custom.yml).
+     * Setup configuration file.
+     * <p>Supported formats:
+     * <ul>
+     *   <li>{@code "custom"} (auto-adds .yml)</li>
+     *   <li>{@code "custom.yml"}</li>
+     * </ul>
+     *
+     * @param name The name of the file
      */
     public void setupConfig(String name) {
         String fileName = name.endsWith(".yml") ? name : name + ".yml";
@@ -30,6 +36,16 @@ public class ConfigManager {
         }
 
         reloadConfig();
+
+        InputStream defaultStream = plugin.getResource(fileName);
+        if (defaultStream != null) {
+            YamlConfiguration defaultConfig = YamlConfiguration.loadConfiguration(
+                    new InputStreamReader(defaultStream, StandardCharsets.UTF_8));
+
+            config.setDefaults(defaultConfig);
+
+            saveConfig();
+        }
     }
 
     /**
