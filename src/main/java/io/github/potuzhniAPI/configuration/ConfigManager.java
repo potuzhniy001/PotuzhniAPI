@@ -9,12 +9,11 @@ import java.nio.charset.StandardCharsets;
 
 public class ConfigManager {
     private final JavaPlugin plugin;
-    private FileConfiguration config;
-    private File configFile;
 
-    public ConfigManager(JavaPlugin plugin) {
-        this.plugin = plugin;
-    }
+    private FileConfiguration config;
+    private File              configFile;
+
+    public ConfigManager(JavaPlugin plugin) { this.plugin = plugin; }
 
     /**
      * Setup configuration file.
@@ -69,4 +68,5 @@ public class ConfigManager {
     }
 
     public FileConfiguration getConfig() { return config; }
+
 }

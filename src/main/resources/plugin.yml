@@ -11,6 +11,6 @@ authors: [ potuzhni ]
 softdepend: [ PlaceholderAPI ]
 
 commands:
-  cmd:
+  killcmd:
     description: test commmand
     permission: test.command
