@@ -1,4 +1,4 @@
-package io.github.potuzhniAPI.listeners;
+package io.github.potuzhniAPI.test.listeners;
 
 import io.github.potuzhniAPI.menu.Menu;
 import org.bukkit.entity.Player;

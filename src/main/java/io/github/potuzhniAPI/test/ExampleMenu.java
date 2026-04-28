@@ -1,5 +1,6 @@
-package io.github.potuzhniAPI.menu;
+package io.github.potuzhniAPI.test;
 
+import io.github.potuzhniAPI.menu.AbstractSimpleMenu;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
@@ -9,7 +10,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 public class ExampleMenu extends AbstractSimpleMenu {
 
     public ExampleMenu() {
-        super(Rows.FIVE, Component.text("Example menu btwww", NamedTextColor.GOLD));
+        super("paginated-menu");
     }
 
     @Override

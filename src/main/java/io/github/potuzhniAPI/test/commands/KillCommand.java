@@ -1,6 +1,6 @@
-package io.github.potuzhniAPI.commands;
+package io.github.potuzhniAPI.test.commands;
 
-import io.github.potuzhniAPI.menu.ExampleMenu;
+import io.github.potuzhniAPI.test.ExampleMenu;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
