@@ -7,21 +7,23 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class PotuzhniAPI extends JavaPlugin {
 
+    private static PotuzhniAPI instance;
+
     private ConfigManager messagesConfig;
 
     @Override
     public void onEnable() {
+        instance = this;
+
         saveDefaultConfig();
 
         messagesConfig = new ConfigManager(this);
         messagesConfig.setupConfig("messages");
-        messagesConfig.reloadConfig();
 
         getCommand("killcmd").setExecutor(new KillCommand());
         getServer().getPluginManager().registerEvents(new InventoryListener(), this);
     }
 
-    //onDisable
-
+    public static PotuzhniAPI getPlugin() { return instance; }
     public ConfigManager getMessagesConfig() { return messagesConfig; }
 }

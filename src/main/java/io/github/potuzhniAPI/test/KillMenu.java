@@ -1,13 +1,13 @@
 package io.github.potuzhniAPI.test;
 
-import io.github.potuzhniAPI.menu.SimpleMenu;
+import io.github.potuzhniAPI.menu.AbstractSimpleMenu;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class KillMenu extends SimpleMenu {
+public class KillMenu extends AbstractSimpleMenu {
 
     public KillMenu() {
         super(Rows.THREE, Component.text("Example menu btw"));

@@ -52,7 +52,7 @@ public class ConfigManager {
      */
     public void reloadConfig() {
         config = YamlConfiguration.loadConfiguration(configFile);
-        plugin.getComponentLogger().info("<green>Config {} reloaded!", configFile.getName());
+        plugin.getComponentLogger().info("Config {} reloaded!", configFile.getName());
     }
 
     /**
@@ -62,7 +62,7 @@ public class ConfigManager {
         try {
             config.save(configFile);
         } catch (IOException e) {
-            plugin.getComponentLogger().error("<red>The configuration file could not be saved: {}", configFile.getName());
+            plugin.getComponentLogger().error("The configuration file could not be saved: {}", configFile.getName());
             e.printStackTrace();
         }
     }
