@@ -1,40 +1,77 @@
 package io.github.potuzhniAPI.utils;
 
+import io.github.potuzhniAPI.menu.AbstractSimpleMenu;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.InventoryHolder;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.util.Consumer;
 import org.jetbrains.annotations.NotNull;
 
-import static io.github.potuzhniAPI.PotuzhniAPI.getPlugin;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class PotuzhniUtils {
 
-    public Component formattedTitle;
-    public int rows;
 
     /**
-     * Load menu from config
+     * Load items from config
+     * @param itemsSection Name of inventory
      */
-    public void loadMenu(FileConfiguration config) {
-        ConfigurationSection menusSection = config.getConfigurationSection("menus");
+    public void loadItems(AbstractSimpleMenu menu, ConfigurationSection itemsSection) {
+        if (itemsSection == null) return;
 
-        for (String menus : menusSection.getKeys(false)) {
-            ConfigurationSection menusSettingsSection = menusSection.getConfigurationSection(menus);
+        for (String key : itemsSection.getKeys(false)) {
+            ConfigurationSection settings = itemsSection.getConfigurationSection(key);
+            if (settings == null) return;
 
-            String title = menusSettingsSection.getString("title", "Default title");
-            formattedTitle = parse(title);
+            Material material = Material.matchMaterial(settings.getString("material", "STONE").toUpperCase());
+            if (material == null) { material = Material.STONE; }
 
-            rows = menusSettingsSection.getInt("rows", 3);
-            rows *= 9;
+            ItemStack item = new ItemStack(material);
+            ItemMeta meta = item.getItemMeta();
+
+            if (meta != null) {
+                String displayName = settings.getString("display-name");
+                meta.displayName(parse(displayName));
+
+                if (settings.isList("lore")) {
+                    List<String> lore = settings.getStringList("lore");
+                    List<Component> formattedLore = new ArrayList<>();
+
+                    for (String line : lore) {
+                        formattedLore.add(parse(line));
+                    }
+
+                    meta.lore(formattedLore);
+
+                } else if (settings.isString("lore")) {
+                    String lore = settings.getString("lore", "Default Lore");
+                    Component formattedLore = parse(lore);
+                    meta.lore(Collections.singletonList(formattedLore));
+                }
+            }
+
+            String actionStr = settings.getString("action", "");
+
+            Consumer<Player> action = p -> {
+                String processedAction = actionStr.replace("%player%", p.getName());
+                if (processedAction.toLowerCase().startsWith("[console] ")) {
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), processedAction.substring(10));
+                } else if (processedAction.toLowerCase().startsWith("[player] ")) {
+                    p.performCommand(processedAction.substring(9));
+                }
+            };
+
+            int slot = settings.getInt("slot");
+            menu.setItem(slot, item, action);
         }
-
-        Inventory inventory = Bukkit.createInventory(null, rows, formattedTitle);
     }
 
 
@@ -58,9 +95,4 @@ public class PotuzhniUtils {
     public static void sendMessage(CommandSender sender, String message) { sender.sendMessage(parse(message)); }
 
 
-    public Component getFormattedTitle() { return formattedTitle; }
-    public void setFormattedTitle(Component formattedTitle) { this.formattedTitle = formattedTitle; }
-
-    public int getRows() { return rows; }
-    public void setRows(int rows) { this.rows = rows; }
 }

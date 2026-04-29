@@ -1,6 +1,6 @@
 package io.github.potuzhniAPI.test.commands;
 
-import io.github.potuzhniAPI.test.ExampleMenu;
+import io.github.potuzhniAPI.menu.GenericMenu;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,11 +13,11 @@ public class KillCommand implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
         if (!(sender instanceof Player player)) {
-            sender.sendRichMessage("<red>Only players can use this");
+            sender.sendRichMessage("<red>Only players can use this!");
             return true;
         }
 
-        new ExampleMenu(player).open(player);
+        new GenericMenu("test-menu").open(player);
 
         return true;
     }
